@@ -93,7 +93,7 @@ function NewsletterPreview() {
                 Non-Profit Organization
               </span>
             </div>
-            <p className="text-white text-sm" style={{ opacity: 0.9 }}>
+            <p className="text-white text-sm text-white">
               Building a vibrant Performing Arts Centre for our community.
             </p>
           </div>
