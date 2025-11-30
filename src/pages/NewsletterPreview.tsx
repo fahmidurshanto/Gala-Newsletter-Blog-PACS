@@ -77,7 +77,6 @@ function NewsletterPreview() {
                   src="/JDFPACS-Logo.svg" 
                   alt="PACS Logo" 
                   className="h-10 w-auto transition-transform duration-300 hover:scale-105"
-                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
                 <div className="flex items-center gap-2">
                   <Mail className="text-white" size={20} />
