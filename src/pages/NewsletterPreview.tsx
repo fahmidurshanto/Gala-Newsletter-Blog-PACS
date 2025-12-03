@@ -44,25 +44,8 @@ function NewsletterPreview() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white bg-pattern py-12 px-4 relative">
-      {/* Decorative Background Elements */}
-      <div className="bg-decorative">
-        <div className="decorative-element decorative-element-1"></div>
-        <div className="decorative-element decorative-element-2"></div>
-        <div className="decorative-element decorative-element-3"></div>
-        <div className="decorative-element decorative-element-4"></div>
-        <div className="decorative-element decorative-element-5"></div>
-        <div className="decorative-element decorative-element-6"></div>
-        <div className="geometric-shape geometric-shape-1"></div>
-        <div className="geometric-shape geometric-shape-2"></div>
-        <div className="geometric-shape geometric-shape-3"></div>
-        <div className="decorative-line decorative-line-left"></div>
-        <div className="decorative-line decorative-line-right"></div>
-        <div className="decorative-dots decorative-dots-left"></div>
-        <div className="decorative-dots decorative-dots-right"></div>
-      </div>
-      
-      <div className="max-w-2xl mx-auto relative z-10">
+    <div className="py-12 px-4">
+      <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl animate-fade-in-up">
           {/* Header */}
           <div 
@@ -247,33 +230,6 @@ function NewsletterPreview() {
                 </span>
               </li>
             </ul>
-          </div>
-
-          {/* Footer */}
-          <div 
-            className="px-8 py-4 text-center border-t"
-            style={{ 
-              backgroundColor: 'rgba(6, 24, 57, 0.02)',
-              borderColor: 'rgba(6, 24, 57, 0.1)'
-            }}
-          >
-            <img 
-              src="/JDFPACS-Logo.svg" 
-              alt="PACS Logo" 
-              className="h-10 w-auto mx-auto mb-3 transition-transform duration-300 hover:scale-105"
-            />
-            <p 
-              className="text-xs scroll-reveal mb-1"
-              style={{ color: '#061839', opacity: 0.6 }}
-            >
-              You're receiving this from PACS
-            </p>
-            <p 
-              className="text-xs scroll-reveal"
-              style={{ color: '#061839', opacity: 0.5 }}
-            >
-              Non-Profit Organization • building4thearts.com
-            </p>
           </div>
         </div>
       </div>

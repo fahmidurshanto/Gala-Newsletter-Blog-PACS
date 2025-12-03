@@ -1,15 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NewsletterPreview from './pages/NewsletterPreview';
-import BlogPage from './pages/BlogPage';
+import { RouterProvider } from 'react-router-dom';
+import router from './Routes.tsx';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<NewsletterPreview />} />
-        <Route path="/blog" element={<BlogPage />} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
   );
 }
 
