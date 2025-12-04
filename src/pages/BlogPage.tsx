@@ -70,8 +70,8 @@ function BlogPage() {
     <div className="relative">
       <BlogHeader isBookmarked={isBookmarked} setIsBookmarked={setIsBookmarked} />
       
-      <article className="max-w-4xl mx-auto px-4 py-12 relative" style={{ zIndex: 10 }}>
-        <div className="flex items-center justify-between mb-6">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 py-12 relative" style={{ zIndex: 10 }}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div 
             className="inline-block text-sm font-semibold px-4 py-1.5 rounded-full animate-fade-in"
             style={{ backgroundColor: 'rgba(28, 117, 188, 0.1)', color: '#1C75BC' }}
@@ -86,7 +86,7 @@ function BlogPage() {
         </div>
 
         <h1 
-          className="text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up"
           style={{ color: '#061839' }}
         >
           The Night West Shore Showed Its Heart: With Gratitude and Applause to Our 2025 Gala Supporters.
