@@ -155,7 +155,6 @@ const BlogContent = () => {
         </li>
       </ul>
 
-      <BlogImage src="/Sponsor.png" alt="Community gathering at the PACS Gala" />
 
       <p 
         className="text-center leading-relaxed mb-8 scroll-reveal scroll-reveal-delay-3"
