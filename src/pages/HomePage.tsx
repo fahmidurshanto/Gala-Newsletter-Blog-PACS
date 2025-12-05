@@ -1,18 +1,11 @@
 import NewsletterCard from '../components/NewsletterCard';
-import { Link } from 'react-router-dom';
+
 
 const HomePage = () => {
   return (
     <div className="py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6" style={{ color: '#061839' }}>
-            Welcome to 
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: '#061839', opacity: 0.8 }}>
-            Building a vibrant Performing Arts Centre for our community
-          </p>
-        </div>
+
         
         <div className="grid grid-cols-1 gap-8 md:gap-12">
           {/* Newsletter Preview Section */}
@@ -33,27 +26,18 @@ const HomePage = () => {
             Explore More Content
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              to="/newsletter" 
+            <a 
+              href="https://building4thearts.com" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-center"
               style={{ 
                 backgroundColor: '#1C75BC', 
                 color: 'white' 
               }}
             >
-              View All Newsletters
-            </Link>
-            <Link 
-              to="/blog" 
-              className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 border-2 text-center"
-              style={{ 
-                borderColor: '#1C75BC', 
-                color: '#1C75BC',
-                backgroundColor: 'transparent'
-              }}
-            >
               Browse All Blogs
-            </Link>
+            </a>
           </div>
         </div>
       </div>
