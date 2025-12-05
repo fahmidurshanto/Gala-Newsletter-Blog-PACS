@@ -27,7 +27,7 @@ const HomePage = () => {
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="https://building4thearts.com" 
+              href="https://building4thearts.com/projects/news" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-center"

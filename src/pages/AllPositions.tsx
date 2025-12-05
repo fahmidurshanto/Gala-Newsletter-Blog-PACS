@@ -190,11 +190,8 @@ const AllPositions: React.FC = () => {
                 <option value="Non-profit">Non-profit</option>
                 <option value="Charity">Charity</option>
                 <option value="Community Center">Community Center</option>
-                <option value="Hospital">Hospital</option>
                 <option value="School">School</option>
                 <option value="Environmental">Environmental</option>
-                <option value="Animal Shelter">Animal Shelter</option>
-                <option value="Senior Center">Senior Center</option>
                 <option value="Youth Program">Youth Program</option>
               </select>
             </div>
