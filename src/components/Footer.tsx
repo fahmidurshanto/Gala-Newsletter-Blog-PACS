@@ -1,4 +1,4 @@
-
+import JDFPACSLogoPng from '../../public/JDFPACS-Logo.png';
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
     >
       <div className="max-w-4xl mx-auto px-4 py-12 text-center">
         <img 
-          src="../../public/JDFPACS-Logo.png" 
+          src={JDFPACSLogoPng} 
           alt="Logo" 
           className="h-16 w-auto mx-auto mb-4 transition-transform duration-300 hover:scale-105"
         />
@@ -45,9 +45,7 @@ const Footer = () => {
             Become a Sponsor.
           </a>
         </div>
-        <p className="text-sm" style={{ opacity: 0.5 }}>
-          © 2025 . All rights reserved.
-        </p>
+
       </div>
     </footer>
   );

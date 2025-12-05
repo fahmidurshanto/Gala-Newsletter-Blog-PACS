@@ -25,7 +25,7 @@ const FloatingShape = ({
       case 'circle':
         return (
           <motion.div
-            className="rounded-full opacity-20"
+            className="rounded-full opacity-10"
             style={{
               width: size,
               height: size,
@@ -48,7 +48,7 @@ const FloatingShape = ({
       case 'square':
         return (
           <motion.div
-            className="opacity-20"
+            className="opacity-10"
             style={{
               width: size,
               height: size,
@@ -73,7 +73,7 @@ const FloatingShape = ({
       case 'triangle':
         return (
           <motion.div
-            className="opacity-20"
+            className="opacity-10"
             style={{
               width: 0,
               height: 0,
@@ -134,7 +134,7 @@ const FloatingParticle = ({
   
   return (
     <motion.div
-      className="absolute rounded-full opacity-10"
+      className="absolute rounded-full opacity-5"
       style={{
         width: size,
         height: size,
@@ -147,7 +147,7 @@ const FloatingParticle = ({
       animate={{
         x: [0, xOffset, -xOffset, 0],
         y: [0, yOffset, -yOffset, 0],
-        opacity: [0.1, 0.2, 0.1],
+        opacity: [0.05, 0.1, 0.05],
       }}
       transition={{
         duration: animationDuration,
@@ -182,11 +182,11 @@ const AnimatedBackground = () => {
   }>>([]);
   
   useEffect(() => {
-    // Generate 12 random shapes with brand colors (darker variants)
-    const generatedShapes = Array.from({ length: 12 }, (_, i) => ({
+    // Generate 8 random shapes with brand colors (darker variants) - reduced from 12
+    const generatedShapes = Array.from({ length: 8 }, (_, i) => ({
       id: i,
       shape: ['circle', 'square', 'triangle'][Math.floor(Math.random() * 3)] as 'circle' | 'square' | 'triangle',
-      size: Math.random() * 80 + 30, // Random size between 30-110px
+      size: Math.random() * 60 + 20, // Reduced size range between 20-80px
       color: [
         '#0a4a7a',   // Darker blue (#1C75BC -> #0a4a7a)
         '#a53a1d',   // Darker orange (#D7562B -> #a53a1d)
@@ -201,10 +201,10 @@ const AnimatedBackground = () => {
       duration: Math.random() * 15 + 15, // Random duration (15-30s)
     }));
     
-    // Generate 30 random particles (darker variants)
-    const generatedParticles = Array.from({ length: 30 }, (_, i) => ({
+    // Generate 20 random particles (darker variants) - reduced from 30
+    const generatedParticles = Array.from({ length: 20 }, (_, i) => ({
       id: i + 1000, // Different ID range to avoid conflicts
-      size: Math.random() * 8 + 2, // Random size between 2-10px
+      size: Math.random() * 6 + 1, // Reduced size range between 1-7px
       color: [
         '#0a4a7a',   // Darker blue (#1C75BC -> #0a4a7a)
         '#a53a1d',   // Darker orange (#D7562B -> #a53a1d)
@@ -225,16 +225,16 @@ const AnimatedBackground = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
-      {/* Enhanced gradient overlay with darker colors */}
+      {/* Enhanced gradient overlay with darker colors and lower opacity */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-15"
         style={{
           background: `linear-gradient(135deg, 
-            rgba(10, 74, 122, 0.1) 0%, 
-            rgba(165, 58, 29, 0.1) 25%, 
-            rgba(214, 154, 26, 0.1) 50%, 
-            rgba(0, 0, 0, 0.1) 75%, 
-            rgba(10, 74, 122, 0.1) 100%)`,
+            rgba(10, 74, 122, 0.05) 0%, 
+            rgba(165, 58, 29, 0.05) 25%, 
+            rgba(214, 154, 26, 0.05) 50%, 
+            rgba(0, 0, 0, 0.05) 75%, 
+            rgba(10, 74, 122, 0.05) 100%)`,
         }}
       />
       

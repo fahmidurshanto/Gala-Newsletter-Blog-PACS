@@ -7,7 +7,7 @@ const FeaturesSection = () => {
     {
       icon: <Users className="w-8 h-8" />,
       title: "Community Connection",
-      description: "Connect with like-minded individuals passionate about making a difference in Greater Victoria"
+      description: "Connect with like-minded individuals passionate about making a difference"
     },
     {
       icon: <Heart className="w-8 h-8" />,
@@ -33,7 +33,7 @@ const FeaturesSection = () => {
           Why Volunteer With Us?
         </h2>
         <p className="text-lg sm:text-xl max-w-3xl mx-auto" style={{ color: '#061839', opacity: 0.8 }}>
-          Join thousands of volunteers who are making a positive impact in our community every day
+          The Westshore Community blends vibrant urban growth with the stunning natural beauty of Vancouver Island, offering a unique and rewarding experience for volunteers.
         </p>
       </div>
 

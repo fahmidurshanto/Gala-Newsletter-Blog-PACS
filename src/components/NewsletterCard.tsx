@@ -1,6 +1,9 @@
 import { ArrowRight, Mail, Calendar, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import JDFPACSLogoPng from '../../public/JDFPACS-Logo.png';
+import JDFPACSLogoSvg from '../../public/JDFPACS-Logo.svg';
+import CommunityImage from '../../public/Community.png';
 
 function NewsletterCard() {
   const navigate = useNavigate();
@@ -55,7 +58,7 @@ function NewsletterCard() {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
             <img 
-              src="../../public/JDFPACS-Logo.png" 
+              src={JDFPACSLogoPng} 
               alt="Logo" 
               className="h-10 w-auto transition-transform duration-300 hover:scale-105"
             />
@@ -105,7 +108,7 @@ function NewsletterCard() {
         <div className="flex flex-wrap items-center gap-4 text-sm mb-6 scroll-reveal scroll-reveal-delay-2" style={{ color: '#061839', opacity: 0.7 }}>
           <div className="flex items-center gap-2">
             <img 
-              src="/JDFPACS-Logo.svg" 
+              src={JDFPACSLogoSvg} 
               alt="Logo" 
               className="w-8 h-8 rounded-full object-contain p-1.5"
               style={{ backgroundColor: '#d9d4d4' }}
@@ -127,7 +130,7 @@ function NewsletterCard() {
         {/* Featured Image */}
         <div className="mb-6 rounded-lg overflow-hidden shadow-md scroll-reveal scroll-reveal-delay-2">
           <img
-            src="/Community.png"
+            src={CommunityImage}
             alt="West Shore Arts Gala 2025 at Olympic View Golf Club"
             className="w-full h-64 object-cover image-hover animate-image-reveal"
           />

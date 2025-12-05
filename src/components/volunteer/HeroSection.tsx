@@ -17,10 +17,10 @@ const HeroSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
-            Volunteer <span className="text-yellow-300">Victoria</span>
+            Find Your <span className="text-yellow-300">Perfect</span> Volunteer Opportunity
           </h1>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed text-white">
-            Inspiring volunteers and empowering volunteerism across Greater Victoria
+            Connect with meaningful causes and make a difference in your community
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -53,7 +53,7 @@ const HeroSection = () => {
                 e.currentTarget.style.color = 'white';
               }}
             >
-              <Calendar size={20} /> Book Appointment
+              <Calendar size={20} /> Get Started
             </button>
           </div>
         </div>

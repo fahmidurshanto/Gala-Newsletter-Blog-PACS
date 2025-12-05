@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Target, Briefcase, Heart, Building, Star, Calendar, ChevronRight, GraduationCap } from 'lucide-react';
+import { Search, Target, Briefcase, Heart, Building, Star, Calendar, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SearchSection = () => {
@@ -33,11 +33,7 @@ const SearchSection = () => {
     // Search is handled by the filteredCategories useMemo above
   };
 
-  const handleRequestVolunteer = () => {
-    console.log('Requesting one-time volunteer');
-    // Add request volunteer functionality here
-    alert('One-time volunteer request form would open here');
-  };
+
 
   return (
     <div 
@@ -125,56 +121,6 @@ const SearchSection = () => {
               ))}
             </div>
           )}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <button
-            onClick={handleRequestVolunteer}
-            className="group bg-gradient-to-r from-[#1C75BC] to-[#061839] text-white rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            style={{ 
-              background: 'linear-gradient(to right, #1C75BC, #061839)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #165a9a, #041026)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #1C75BC, #061839)';
-            }}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="text-xl font-bold mb-2">Request a One-Time Volunteer</h4>
-                <p className="text-blue-100 text-sm">Perfect for short-term opportunities</p>
-              </div>
-              <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-colors">
-                <ChevronRight size={24} />
-              </div>
-            </div>
-          </button>
-
-          <button 
-            className="group bg-gradient-to-r from-[#D7562B] to-[#061839] text-white rounded-2xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            style={{ 
-              background: 'linear-gradient(to right, #D7562B, #061839)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #b04523, #041026)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #D7562B, #061839)';
-            }}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="text-xl font-bold mb-2">Virtual Advising</h4>
-                <p className="text-orange-100 text-sm">Get personalized guidance</p>
-              </div>
-              <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-colors">
-                <Calendar size={24} />
-              </div>
-            </div>
-          </button>
         </div>
 
         {/* Help Text */}

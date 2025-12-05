@@ -21,7 +21,7 @@ const BlogImage = ({ src, alt, className = '' }: BlogImageProps) => {
         <img
           src={src}
           alt={alt}
-          className="w-full h-96 object-cover image-hover animate-image-reveal"
+          className="w-full h-80 sm:h-96 object-cover image-hover animate-image-reveal"
         />
       </div>
       
@@ -29,6 +29,20 @@ const BlogImage = ({ src, alt, className = '' }: BlogImageProps) => {
         open={open}
         close={() => setOpen(false)}
         slides={[{ src, alt }]}
+        carousel={{
+          finite: true,
+        }}
+        render={{
+          buttonPrev: () => null,
+          buttonNext: () => null,
+        }}
+        toolbar={{
+          buttons: [],
+        }}
+        controller={{
+          touchAction: "none",
+          disableSwipeNavigation: true,
+        }}
       />
     </>
   );

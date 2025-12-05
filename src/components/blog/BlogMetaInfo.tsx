@@ -1,27 +1,28 @@
 import { Calendar, Clock } from 'lucide-react';
+import JDFPACSLogoSvg from '../../../public/JDFPACS-Logo.svg';
 
 const BlogMetaInfo = () => {
   return (
-    <div className="flex flex-wrap items-center gap-6 mb-8 animate-fade-in-up" style={{ color: '#061839' }}>
-      <div className="flex items-center gap-3">
+    <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-8 animate-fade-in-up" style={{ color: '#061839' }}>
+      <div className="flex items-center gap-2 sm:gap-3">
         <img 
-          src="/public/JDFPACS-Logo.svg" 
+          src={JDFPACSLogoSvg} 
           alt="Logo" 
-          className="w-12 h-12 rounded-full object-contain p-2"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-contain p-1 sm:p-2"
           style={{ backgroundColor: '#d9d4d4' }}
         />
         <div>
-          <p className="font-semibold" style={{ color: '#061839' }}></p>
-          <p className="text-sm" style={{ color: '#061839', opacity: 0.7 }}>Non-Profit Organization</p>
+          <p className="font-semibold text-sm sm:text-base" style={{ color: '#061839' }}></p>
+          <p className="text-xs sm:text-sm" style={{ color: '#061839', opacity: 0.7 }}>Non-Profit Organization</p>
         </div>
       </div>
       <div className="flex items-center gap-2">
-        <Calendar size={18} />
-        <span>November 11, 2025</span>
+        <Calendar size={16} className="sm:size-18" />
+        <span className="text-sm sm:text-base">November 11, 2025</span>
       </div>
       <div className="flex items-center gap-2">
-        <Clock size={18} />
-        <span>6 min read</span>
+        <Clock size={16} className="sm:size-18" />
+        <span className="text-sm sm:text-base">6 min read</span>
       </div>
     </div>
   );

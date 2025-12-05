@@ -1,30 +1,32 @@
+import JDFPACSLogoPng from '../../../public/JDFPACS-Logo.png';
+
 const BlogAbout = () => {
   return (
     <div 
-      className="rounded-2xl p-8 my-12 border scroll-reveal scroll-reveal-delay-2 animate-scale-in"
+      className="rounded-2xl p-6 sm:p-8 my-12 border scroll-reveal scroll-reveal-delay-2 animate-scale-in"
       style={{ 
         background: 'linear-gradient(to bottom right, rgba(28, 117, 188, 0.05), rgba(6, 24, 57, 0.02))',
         borderColor: 'rgba(28, 117, 188, 0.2)'
       }}
     >
-      <div className="flex items-start gap-6">
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
         <div className="flex-shrink-0">
           <img 
-            src="../../../public/JDFPACS-Logo.png" 
+            src={JDFPACSLogoPng} 
             alt="Logo" 
-            className="h-20 w-auto transition-transform duration-300 hover:scale-110"
+            className="h-16 w-auto sm:h-20 transition-transform duration-300 hover:scale-110"
           />
         </div>
         <div>
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
             <h3 
-              className="text-xl font-bold"
+              className="text-lg sm:text-xl font-bold"
               style={{ color: '#061839' }}
             >
               About 
             </h3>
             <span 
-              className="text-xs font-semibold px-3 py-1 rounded-full"
+              className="text-xs font-semibold px-2 py-1 sm:px-3 sm:py-1 rounded-full"
               style={{ 
                 backgroundColor: 'rgba(215, 86, 43, 0.1)', 
                 color: '#D7562B' 
@@ -34,7 +36,7 @@ const BlogAbout = () => {
             </span>
           </div>
           <p 
-            className="mb-4"
+            className="mb-4 text-sm sm:text-base"
             style={{ color: '#061839', opacity: 0.8 }}
           >
             The Juan de Fuca Performing Arts Centre Society is a charitable not-for-profit (S-0064886) which was formed in 2016, and received charitable tax status in 2017 (Reg No 79421 9725 RR0001). A working board of directors currently runs the society. Our mission is to build a regional theatre and associated arts infrastructure in a community consisting of the rapidly growing British Columbia municipalities of Colwood and Langford, together with the Districts of Metchosin and Highlands, the Town of View Royal and the Juan de Fuca Electoral Area, representing a population of approximately 79,000 people.

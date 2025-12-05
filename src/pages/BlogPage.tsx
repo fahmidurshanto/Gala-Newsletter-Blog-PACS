@@ -7,6 +7,8 @@ import BlogTags from '../components/blog/BlogTags';
 import BlogAbout from '../components/blog/BlogAbout';
 import BlogImage from '../components/blog/BlogImage';
 import AnimatedBackground from '../components/blog/AnimatedBackground';
+import JDFPACSLogoSvg from '../../public/JDFPACS-Logo.svg';
+import CommunityImage from '../../public/Community.png';
 
 function BlogPage() {
   const [isLiked, setIsLiked] = useState(false);
@@ -81,9 +83,9 @@ function BlogPage() {
             Community Events
           </div>
           <img 
-            src="/JDFPACS-Logo.svg" 
+            src={JDFPACSLogoSvg} 
             alt="Logo" 
-            className="h-8 w-auto transition-transform duration-300 hover:scale-105 transform"
+            className="h-6 sm:h-8 w-auto transition-transform duration-300 hover:scale-105 transform"
           />
         </div>
 
@@ -96,7 +98,7 @@ function BlogPage() {
 
         <BlogMetaInfo />
 
-        <BlogImage src="/Community.png" alt="Gala 2025 at Olympic View Golf Club" />
+        <BlogImage src={CommunityImage} alt="Gala 2025 at Olympic View Golf Club" />
 
         <BlogContent />
 
