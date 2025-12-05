@@ -58,12 +58,12 @@ function NewsletterPreview() {
               <div className="flex items-center gap-3">
                 <img 
                   src="/JDFPACS-Logo.svg" 
-                  alt="PACS Logo" 
+                  alt="Logo" 
                   className="h-10 w-auto transition-transform duration-300 hover:scale-105"
                 />
                 <div className="flex items-center gap-2">
                   <Mail className="text-white" size={20} />
-                  <span className="text-white font-semibold text-lg">PACS</span>
+                  <span className="text-white font-semibold text-lg"></span>
                 </div>
               </div>
               <span 
@@ -108,11 +108,11 @@ function NewsletterPreview() {
               <div className="flex items-center gap-2">
                 <img 
                   src="/JDFPACS-Logo.svg" 
-                  alt="PACS Logo" 
+                  alt="Logo" 
                   className="w-8 h-8 rounded-full object-contain p-1.5"
                   style={{ backgroundColor: '#d9d4d4' }}
                 />
-                <span>PACS</span>
+
               </div>
               <span>•</span>
               <div className="flex items-center gap-1">
@@ -226,7 +226,7 @@ function NewsletterPreview() {
                   •
                 </span>
                 <span style={{ color: '#061839' }}>
-                  What's next for the PACS
+                  What's next for the 
                 </span>
               </li>
             </ul>

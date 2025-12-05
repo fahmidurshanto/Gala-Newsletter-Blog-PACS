@@ -39,7 +39,7 @@ const LoginPage: React.FC = () => {
             Welcome Back
           </h2>
           <p className="mt-2 text-sm sm:text-base text-gray-600">
-            Sign in to your PACS account
+            Sign in to your account
           </p>
         </div>
         
@@ -176,7 +176,7 @@ const LoginPage: React.FC = () => {
         </div>
         
         <div className="text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} PACS. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} . All rights reserved.</p>
         </div>
       </div>
     </div>

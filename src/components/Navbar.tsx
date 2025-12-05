@@ -48,11 +48,10 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <img 
               src="/JDFPACS-Logo.svg" 
-              alt="PACS Logo" 
+              alt="Logo"
               className="h-10 w-auto transition-transform duration-300 hover:scale-105"
             />
             <Link to="/" className="font-bold text-xl" style={{ color: '#061839' }}>
-              PACS
             </Link>
           </div>
           
@@ -75,13 +74,6 @@ const Navbar = () => {
                 style={{ color: '#061839' }}
               >
                 Home
-              </Link>
-              <Link 
-                to="/newsletter" 
-                className="font-medium transition-all duration-300 hover:text-blue-600"
-                style={{ color: '#061839' }}
-              >
-                Newsletter
               </Link>
               <Link 
                 to="/blog" 
@@ -194,14 +186,6 @@ const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
-              </Link>
-              <Link 
-                to="/newsletter" 
-                className="font-medium py-3 transition-all duration-300 hover:text-blue-600 block"
-                style={{ color: '#061839' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Newsletter
               </Link>
               <Link 
                 to="/blog" 

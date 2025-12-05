@@ -50,7 +50,7 @@ const SignupPage: React.FC = () => {
             Create Account
           </h2>
           <p className="mt-2 text-sm text-gray-600">
-            Join the PACS community today
+            Join the community today
           </p>
         </div>
         
@@ -220,7 +220,7 @@ const SignupPage: React.FC = () => {
         </div>
         
         <div className="text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} PACS. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} . All rights reserved.</p>
         </div>
       </div>
     </div>

@@ -10,8 +10,8 @@ const BlogAbout = () => {
       <div className="flex items-start gap-6">
         <div className="flex-shrink-0">
           <img 
-            src="/JDFPACS-Logo.svg" 
-            alt="PACS Logo" 
+            src="/logo.svg" 
+            alt="Logo" 
             className="h-20 w-auto transition-transform duration-300 hover:scale-110"
           />
         </div>
@@ -21,7 +21,7 @@ const BlogAbout = () => {
               className="text-xl font-bold"
               style={{ color: '#061839' }}
             >
-              About PACS
+              About 
             </h3>
             <span 
               className="text-xs font-semibold px-3 py-1 rounded-full"

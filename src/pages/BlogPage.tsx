@@ -79,8 +79,8 @@ function BlogPage() {
             Community Events
           </div>
           <img 
-            src="/JDFPACS-Logo.svg" 
-            alt="PACS Logo" 
+            src="/logo.svg" 
+            alt="Logo" 
             className="h-8 w-auto transition-transform duration-300 hover:scale-105 transform"
           />
         </div>
@@ -94,7 +94,7 @@ function BlogPage() {
 
         <BlogMetaInfo />
 
-        <BlogImage src="/Community.png" alt="PACS Gala 2025 at Olympic View Golf Club" />
+        <BlogImage src="/Community.png" alt="Gala 2025 at Olympic View Golf Club" />
 
         <BlogContent />
 

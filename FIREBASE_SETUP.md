@@ -1,6 +1,6 @@
 # Firebase Authentication Setup
 
-This document outlines the Firebase authentication setup for the Gala Newsletter Blog PACS project.
+This document outlines the Firebase authentication setup for the  Blog project.
 
 ## Configuration
 

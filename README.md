@@ -1,2 +1,2 @@
-﻿# Gala-Newsletter-Blog-PACS
+﻿#  Blog
 

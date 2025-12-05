@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Footer = () => {
   return (
@@ -8,12 +8,12 @@ const Footer = () => {
     >
       <div className="max-w-4xl mx-auto px-4 py-12 text-center">
         <img 
-          src="/JDFPACS-Logo.png" 
-          alt="PACS Logo" 
+          src="../../public/JDFPACS-Logo.png" 
+          alt="Logo" 
           className="h-16 w-auto mx-auto mb-4 transition-transform duration-300 hover:scale-105"
         />
         <div className="flex flex-col items-center justify-center gap-2 mb-2">
-          <h3 className="text-2xl font-bold">PACS</h3>
+          <h3 className="text-2xl font-bold"></h3>
           <span 
             className="text-xs font-semibold px-2 py-1 rounded-full"
             style={{ 
@@ -46,7 +46,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-sm" style={{ opacity: 0.5 }}>
-          © 2025 PACS. All rights reserved.
+          © 2025 . All rights reserved.
         </p>
       </div>
     </footer>
