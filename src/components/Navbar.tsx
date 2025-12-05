@@ -35,11 +35,13 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img 
-              src={JDFPACSLogoSvg} 
-              alt="Logo"
-              className="h-10 w-auto transition-transform duration-300 hover:scale-105"
-            />
+            <Link to="/">
+              <img 
+                src={JDFPACSLogoSvg} 
+                alt="Logo"
+                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+              />
+            </Link>
             <Link to="/" className="font-bold text-xl" style={{ color: '#061839' }}>
             </Link>
           </div>
