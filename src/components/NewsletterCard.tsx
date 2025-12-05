@@ -55,7 +55,7 @@ function NewsletterCard() {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
             <img 
-              src="../../public/JDFPACS-Logo.svg" 
+              src="../../public/JDFPACS-Logo.png" 
               alt="Logo" 
               className="h-10 w-auto transition-transform duration-300 hover:scale-105"
             />

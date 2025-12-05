@@ -18,6 +18,7 @@ import ProfilePage from './pages/ProfilePage';
 import AdminPanelPage from './pages/AdminPanelPage';
 import SettingsPage from './pages/SettingsPage';
 import ActivityPage from './pages/ActivityPage';
+import DonatePage from './pages/DonatePage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <BlogPage />
+      </Layout>
+    )
+  },
+  {
+    path: '/donate',
+    element: (
+      <Layout>
+        <DonatePage />
       </Layout>
     )
   },

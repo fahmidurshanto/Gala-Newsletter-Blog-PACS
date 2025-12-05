@@ -6,6 +6,7 @@ import BlogActions from '../components/blog/BlogActions';
 import BlogTags from '../components/blog/BlogTags';
 import BlogAbout from '../components/blog/BlogAbout';
 import BlogImage from '../components/blog/BlogImage';
+import AnimatedBackground from '../components/blog/AnimatedBackground';
 
 function BlogPage() {
   const [isLiked, setIsLiked] = useState(false);
@@ -68,9 +69,10 @@ function BlogPage() {
 
   return (
     <div className="relative">
+      <AnimatedBackground />
       <BlogHeader isBookmarked={isBookmarked} setIsBookmarked={setIsBookmarked} />
       
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 py-12 relative" style={{ zIndex: 10 }}>
+      <article className="w-full px-4 sm:px-6 py-12 relative" style={{ zIndex: 10 }}>
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div 
             className="inline-block text-sm font-semibold px-4 py-1.5 rounded-full animate-fade-in"

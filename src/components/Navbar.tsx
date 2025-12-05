@@ -36,8 +36,8 @@ const Navbar = () => {
     try {
       setLogoutError('');
       await logout();
-    } catch (err: any) {
-      setLogoutError(err.message || 'Failed to log out');
+    } catch (err) {
+      setLogoutError((err as Error).message || 'Failed to log out');
     }
   };
 
@@ -81,6 +81,14 @@ const Navbar = () => {
                 style={{ color: '#061839' }}
               >
                 Blog
+              </Link>
+              
+              <Link 
+                to="/donate" 
+                className="font-medium transition-all duration-300 hover:text-blue-600"
+                style={{ color: '#061839' }}
+              >
+                Donate
               </Link>
               
               {/* Volunteer Dropdown Menu */}
@@ -194,6 +202,15 @@ const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
+              </Link>
+              
+              <Link 
+                to="/donate" 
+                className="font-medium py-3 transition-all duration-300 hover:text-blue-600 block"
+                style={{ color: '#061839' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Donate
               </Link>
               
               {/* Mobile Volunteer Dropdown Menu */}
