@@ -155,7 +155,7 @@ const BlogContent = () => {
         </li>
       </ul>
 
-  
+      <BlogImage src="/Sponsor.png" alt="Community gathering at the PACS Gala" />
 
       <p 
         className="text-center leading-relaxed mb-8 scroll-reveal scroll-reveal-delay-3"
@@ -204,7 +204,7 @@ const BlogContent = () => {
       </div>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col md:w-3/4 mx-auto sm:flex-row gap-4 my-12 scroll-reveal scroll-reveal-delay-2">
+      <div className="flex flex-col sm:flex-row gap-4 my-12 scroll-reveal scroll-reveal-delay-2">
         <a
           href="https://building4thearts.com/donate/"
           target="_blank"
