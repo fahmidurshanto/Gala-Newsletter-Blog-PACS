@@ -37,7 +37,7 @@ const BlogImage = ({ src, alt, className = '' }: BlogImageProps) => {
           buttonNext: () => null,
         }}
         toolbar={{
-          buttons: [],
+          buttons: ['close'],
         }}
         controller={{
           touchAction: "none",
