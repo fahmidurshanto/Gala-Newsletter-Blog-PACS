@@ -10,7 +10,7 @@ const BlogAbout = () => {
       <div className="flex items-start gap-6">
         <div className="flex-shrink-0">
           <img 
-            src="/logo.svg" 
+            src="/JDFPACS-Logo.svg" 
             alt="Logo" 
             className="h-20 w-auto transition-transform duration-300 hover:scale-110"
           />

@@ -79,7 +79,7 @@ function BlogPage() {
             Community Events
           </div>
           <img 
-            src="/logo.svg" 
+            src="/JDFPACS-Logo.svg" 
             alt="Logo" 
             className="h-8 w-auto transition-transform duration-300 hover:scale-105 transform"
           />

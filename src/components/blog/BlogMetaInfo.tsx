@@ -5,7 +5,7 @@ const BlogMetaInfo = () => {
     <div className="flex flex-wrap items-center gap-6 mb-8 animate-fade-in-up" style={{ color: '#061839' }}>
       <div className="flex items-center gap-3">
         <img 
-          src="/logo.svg" 
+          src="/public/JDFPACS-Logo.svg" 
           alt="Logo" 
           className="w-12 h-12 rounded-full object-contain p-2"
           style={{ backgroundColor: '#d9d4d4' }}

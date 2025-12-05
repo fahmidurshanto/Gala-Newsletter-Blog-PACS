@@ -13,7 +13,7 @@ function BlogCard() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/logo.svg" 
+              src="/JDFPACS-Logo.svg" 
               alt="Logo" 
               className="h-8 w-auto transition-transform duration-300 hover:scale-105"
             />
@@ -51,7 +51,7 @@ function BlogCard() {
         <div className="flex flex-wrap items-center gap-4 text-sm mb-6" style={{ color: '#061839', opacity: 0.7 }}>
           <div className="flex items-center gap-2">
             <img 
-              src="/logo.svg" 
+              src="/JDFPACS-Logo.svg" 
               alt="Logo" 
               className="w-6 h-6 rounded-full object-contain p-1"
             />
