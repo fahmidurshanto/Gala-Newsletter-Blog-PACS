@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const SearchSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const categories = [
     { id: 'all', label: 'All Positions', icon: <Briefcase size={20} /> },
@@ -60,15 +59,15 @@ const SearchSection = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search volunteer positions by keyword..."
-              className="w-full pl-12 pr-6 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-[#1C75BC] focus:ring-2 focus:ring-blue-100 transition-all"
+              placeholder="Search positions..."
+              className="w-full pl-12 pr-24 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-[#1C75BC] focus:ring-2 focus:ring-blue-100 transition-all"
               style={{ borderColor: 'rgba(28, 117, 188, 0.2)' }}
               onFocus={(e) => e.target.style.borderColor = '#1C75BC'}
               onBlur={(e) => e.target.style.borderColor = 'rgba(28, 117, 188, 0.2)'}
             />
             <button
               type="submit"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#1C75BC] text-white px-6 py-2 rounded-xl hover:bg-[#165a9a] transition-colors"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#1C75BC] text-white px-4 py-1 md:px-6 md:py-2 rounded-lg md:rounded-xl hover:bg-[#165a9a] transition-colors text-sm md:text-base"
               style={{ backgroundColor: '#1C75BC' }}
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#165a9a'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C75BC'}
@@ -94,28 +93,22 @@ const SearchSection = () => {
               No categories found matching "{searchQuery}"
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {filteredCategories.map((category) => (
                 <Link
                   key={category.id}
                   to={category.id === 'all' ? '/volunteer-category/all' : `/volunteer-category/${category.id}`}
-                  className={`block p-4 rounded-xl border-2 transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? 'border-[#1C75BC] bg-blue-50 text-[#061839] shadow-md'
-                      : 'border-gray-200 bg-white text-[#061839] hover:border-[#1C75BC] hover:shadow-sm'
-                  }`}
+                  className="block p-4 rounded-xl border-2 border-gray-200 bg-white text-[#061839] hover:border-[#1C75BC] hover:shadow-sm transition-all duration-300 min-h-[80px]"
                   style={{
-                    borderColor: activeCategory === category.id ? '#1C75BC' : 'rgba(28, 117, 188, 0.2)',
-                    backgroundColor: activeCategory === category.id ? 'rgba(28, 117, 188, 0.05)' : 'white'
+                    borderColor: 'rgba(28, 117, 188, 0.2)',
+                    backgroundColor: 'white'
                   }}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg ${
-                      activeCategory === category.id ? 'bg-blue-100' : 'bg-gray-100'
-                    }`}>
+                  <div className="flex items-center gap-3 h-full">
+                    <div className="p-2 rounded-lg bg-gray-100 flex-shrink-0">
                       {category.icon}
                     </div>
-                    <span className="font-medium">{category.label}</span>
+                    <span className="font-medium text-sm break-words hyphens-auto overflow-hidden">{category.label}</span>
                   </div>
                 </Link>
               ))}

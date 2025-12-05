@@ -1,113 +1,112 @@
-
 const AnimatedSquares = () => {
   return (
     <div className="py-6 px-4 flex justify-center items-center w-2/10 mx-auto">
       <div id="center" className="relative">
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0080FF]" style={{ animationDelay: '0.1s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0080FF]" style={{ animationDelay: '0.1s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0080FF]" style={{ animationDelay: '0.1s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0080FF]" style={{ animationDelay: '0.1s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0080FF]" style={{ animationDelay: '0.1s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0080FF]" style={{ animationDelay: '0.1s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#0EA7A5]" style={{ animationDelay: '0.2s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#50C878]" style={{ animationDelay: '0.3s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FFD700]" style={{ animationDelay: '0.4s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#FA7A35]" style={{ animationDelay: '0.5s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#E24666]" style={{ animationDelay: '0.6s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#B53389]" style={{ animationDelay: '0.7s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#708090]" style={{ animationDelay: '0.8s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
         <ul className="inline-block list-none">
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#918E85]" style={{ animationDelay: '0.9s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#918E85]" style={{ animationDelay: '0.9s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop bg-[#918E85]" style={{ animationDelay: '0.9s' }}></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
-          <li className="w-6 h-6 m-2 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#918E85]" style={{ animationDelay: '0.9s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#918E85]" style={{ animationDelay: '0.9s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop bg-[#918E85]" style={{ animationDelay: '0.9s' }}></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
+          <li className="w-4 h-4 m-1 opacity-0 scale-0 animate-pop"></li>
         </ul>
       </div>
       

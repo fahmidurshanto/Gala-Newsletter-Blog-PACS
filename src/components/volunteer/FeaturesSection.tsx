@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, Heart, Award, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

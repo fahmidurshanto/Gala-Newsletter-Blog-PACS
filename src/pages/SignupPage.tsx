@@ -1,10 +1,64 @@
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import confetti from 'canvas-confetti';
 
 const SignupPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const triggerConfetti = () => {
+    const count = 300; // Less intense than donation confetti
+    const defaults = {
+      origin: { y: 0.7 },
+      zIndex: 10000,
+    };
+
+    const fire = (particleRatio: number, opts: confetti.Options) => {
+      confetti({
+        ...defaults,
+        ...opts,
+        particleCount: Math.floor(count * particleRatio)
+      });
+    };
+
+    // Initial full-screen burst
+    confetti({
+      particleCount: 100,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      gravity: 0.1,
+      decay: 0.9,
+      scalar: 1.2,
+    });
+    
+    confetti({
+      particleCount: 100,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      gravity: 0.1,
+      decay: 0.9,
+      scalar: 1.2,
+    });
+
+    // More subtle confetti bursts
+    fire(0.3, {
+      spread: 50,
+      startVelocity: 50,
+      decay: 0.85,
+      scalar: 1.0,
+      gravity: 0.05,
+    });
+
+    fire(0.2, {
+      spread: 90,
+      startVelocity: 30,
+      scalar: 0.8,
+      gravity: 0.1,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +73,9 @@ const SignupPage: React.FC = () => {
       setLoading(true);
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Trigger confetti effect
+      triggerConfetti();
       
       // Show success message
       toast.success('Thank you for signing up! We will contact you soon.');

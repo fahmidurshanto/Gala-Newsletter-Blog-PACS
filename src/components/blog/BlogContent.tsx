@@ -113,13 +113,13 @@ const BlogContent = () => {
       <ul className="space-y-1 mb-8">
         <li className="flex items-start gap-3 stagger-item">
           <span 
-            className="text-2xl font-bold mt-1 transition-transform duration-300 hover:scale-125"
+            className="text-2xl font-bold mt-1 transition-transform duration-300 hover:scale-125 flex-shrink-0"
             style={{ color: '#1C75BC' }}
           >
             •
           </span>
           <p 
-            className="leading-relaxed text-lg"
+            className="leading-relaxed text-lg mt-1"
             style={{ color: '#061839' }}
           >
             Voices will have stages
@@ -127,13 +127,13 @@ const BlogContent = () => {
         </li>
         <li className="flex items-start gap-3 stagger-item">
           <span 
-            className="text-2xl font-bold mt-1 transition-transform duration-300 hover:scale-125"
+            className="text-2xl font-bold mt-1 transition-transform duration-300 hover:scale-125 flex-shrink-0"
             style={{ color: '#1C75BC' }}
           >
             •
           </span>
           <p 
-            className="leading-relaxed text-lg"
+            className="leading-relaxed text-lg mt-1"
             style={{ color: '#061839' }}
           >
             Youth will have creative outlets
@@ -141,13 +141,13 @@ const BlogContent = () => {
         </li>
         <li className="flex items-start gap-3 stagger-item">
           <span 
-            className="text-2xl font-bold mt-1 transition-transform duration-300 hover:scale-125"
+            className="text-2xl font-bold mt-1 transition-transform duration-300 hover:scale-125 flex-shrink-0"
             style={{ color: '#1C75BC' }}
           >
             •
           </span>
           <p 
-            className="leading-relaxed text-lg"
+            className="leading-relaxed text-lg mt-1"
             style={{ color: '#061839' }}
           >
             Culture will have a home in West Shore

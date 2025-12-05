@@ -1,15 +1,15 @@
-import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
     <div className="relative overflow-hidden text-white">
-      {/* Background image */}
+      {/* Background image with blur effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-no-repeat bg-center"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-center blur-sm"
         style={{ 
-          backgroundImage: "url('/JUAN_DE_FUCA.jpg')"
+          backgroundImage: "url('/JUAN_DE_FUCA.jpg')",
+          filter: 'blur(4px)'
         }}
       />
       {/* Dark overlay for better text visibility */}
@@ -39,10 +39,6 @@ const HeroSection = () => {
               Explore Opportunities <ArrowRight size={20} />
             </Link>
             <button 
-              onClick={() => {
-                console.log('Book Appointment clicked');
-                alert('Appointment booking feature would open here');
-              }}
               className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'white';

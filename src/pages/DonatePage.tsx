@@ -259,7 +259,7 @@ const Donate: React.FC = () => {
             Charity Registration 79421 9725 RR0001
           </p>
           <p className="text-sm text-gray-700 mt-1">
-            For donations $20 and above, we provide a charitable tax receipt!
+            For donations <span className='text-green-600 font-bold'>$20</span> and above, we provide a charitable tax receipt!
           </p>
         </div>
 
