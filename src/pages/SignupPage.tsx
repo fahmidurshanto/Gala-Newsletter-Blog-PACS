@@ -149,10 +149,6 @@ const SignupPage: React.FC = () => {
             </div>
           </form>
         </div>
-        
-        <div className="text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} . All rights reserved.</p>
-        </div>
       </div>
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
     </div>
