@@ -6,15 +6,15 @@ const StatsSection = () => {
     >
       <div className="grid md:grid-cols-3 gap-8 text-center">
         <div>
-          <div className="text-4xl font-bold text-[#F4BB3A] mb-2">500+</div>
+          <div className="text-4xl font-bold text-[#F4BB3A] mb-2">60+</div>
           <div className="text-blue-100">Active Volunteers</div>
         </div>
         <div>
-          <div className="text-4xl font-bold text-[#F4BB3A] mb-2">1,200+</div>
+          <div className="text-4xl font-bold text-[#F4BB3A] mb-2">20+</div>
           <div className="text-blue-100">Opportunities</div>
         </div>
         <div>
-          <div className="text-4xl font-bold text-[#F4BB3A] mb-2">Weekly</div>
+          <div className="text-4xl font-bold text-[#F4BB3A] mb-2">Monthly</div>
           <div className="text-blue-100">Updated Listings</div>
         </div>
       </div>
