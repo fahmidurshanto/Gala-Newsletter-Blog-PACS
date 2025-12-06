@@ -1,6 +1,16 @@
+import React from 'react';
+import { ChevronUp } from 'lucide-react';
 import JDFPACSLogoPng from '../../public/JDFPACS-Logo.png';
 
 const Footer = () => {
+  // Smooth scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer 
       className="mt-20 animate-fade-in relative"
@@ -45,8 +55,16 @@ const Footer = () => {
             Become a Sponsor.
           </a>
         </div>
-
       </div>
+      
+      {/* Scroll to Top Button - Sticky to bottom right of screen */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 bg-[#1C75BC] text-white p-3 rounded-full shadow-lg hover:bg-[#165a9a] transition-all duration-300 z-50 border-2 border-white hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1C75BC] focus:ring-opacity-50 opacity-85 hover:opacity-100"
+        aria-label="Scroll to top"
+      >
+        <ChevronUp size={20} />
+      </button>
     </footer>
   );
 };
