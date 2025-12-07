@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import React, { useState, useRef } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SignupPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const triggerParticleBurst = () => {
+    // Play sound effect
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current
+        .play()
+        .catch((e) => console.log("Audio play failed:", e));
+    }
+
     const particleCount = 100;
     const colors = ["#1C75BC", "#061839", "#D7562B", "#ffffff"];
 
@@ -34,7 +43,7 @@ const SignupPage: React.FC = () => {
       // Animate particle
       const angle = Math.random() * Math.PI * 2;
       const distance = Math.random() * 200 + 100;
-      const duration = Math.random() * 1000 + 1000;
+      const duration = 6000; // Set to exactly 6 seconds (6000ms)
 
       const animation = particle.animate(
         [
@@ -93,6 +102,13 @@ const SignupPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+      {/* Hidden audio element for sound effect */}
+      <audio ref={audioRef}>
+        <source src="/sounds/signup-success.mp3" type="audio/mpeg" />
+        <source src="/sounds/signup-success.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="mx-auto h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center mb-4">

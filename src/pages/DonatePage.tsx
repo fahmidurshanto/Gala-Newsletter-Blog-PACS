@@ -1,43 +1,55 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import confetti from 'canvas-confetti';
+import React, { useState, useCallback, useMemo, useRef } from "react";
+import confetti from "canvas-confetti";
 
 // Define the available payment methods for the tabs
-type PaymentTab = 'EFT' | 'CARD';
+type PaymentTab = "EFT" | "CARD";
 
 /**
  * Main Donation component using React, TypeScript, and Tailwind CSS.
  * This component manages the state for the selected payment tab and the donation amount.
  */
 const Donate: React.FC = () => {
-  const [activeTabVisual, setActiveTabVisual] = useState<PaymentTab>('CARD'); 
-  const [donationAmount, setDonationAmount] = useState<string>(''); // No default value
+  const [activeTabVisual, setActiveTabVisual] = useState<PaymentTab>("CARD");
+  const [donationAmount, setDonationAmount] = useState<string>(""); // No default value
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Helper function to format input as currency (basic approach)
   const formatAmountInput = (value: string): string => {
     // Remove non-numeric characters except for one decimal point
-    let cleaned = value.replace(/[^0-9.]/g, '');
-    const parts = cleaned.split('.');
+    let cleaned = value.replace(/[^0-9.]/g, "");
+    const parts = cleaned.split(".");
 
     if (parts.length > 2) {
       // Keep only the first decimal point
-      cleaned = parts[0] + '.' + parts.slice(1).join('');
+      cleaned = parts[0] + "." + parts.slice(1).join("");
     }
 
     if (parts[1] && parts[1].length > 2) {
       // Limit to two decimal places
-      return cleaned.slice(0, cleaned.indexOf('.') + 3);
+      return cleaned.slice(0, cleaned.indexOf(".") + 3);
     }
     return cleaned;
   };
 
-  const handleAmountChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const formattedValue = formatAmountInput(e.target.value);
-    setDonationAmount(formattedValue);
-  }, []);
+  const handleAmountChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const formattedValue = formatAmountInput(e.target.value);
+      setDonationAmount(formattedValue);
+    },
+    []
+  );
 
   const triggerConfetti = () => {
+    // Play sound effect
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current
+        .play()
+        .catch((e) => console.log("Audio play failed:", e));
+    }
+
     const count = 600; // Increased to 600 for maximum density
     const defaults = {
       origin: { y: 0.7 },
@@ -48,7 +60,7 @@ const Donate: React.FC = () => {
       confetti({
         ...defaults,
         ...opts,
-        particleCount: Math.floor(count * particleRatio)
+        particleCount: Math.floor(count * particleRatio),
       });
     };
 
@@ -62,7 +74,7 @@ const Donate: React.FC = () => {
       decay: 0.9,
       scalar: 1.2,
     });
-    
+
     confetti({
       particleCount: 150,
       angle: 120,
@@ -123,43 +135,53 @@ const Donate: React.FC = () => {
     }
 
     setIsProcessing(true);
-    console.log(`Processing donation of $${amount.toFixed(2)} using ${activeTabVisual} method.`);
+    console.log(
+      `Processing donation of $${amount.toFixed(
+        2
+      )} using ${activeTabVisual} method.`
+    );
 
     // Simulate API call delay
     setTimeout(() => {
       setIsProcessing(false);
       setShowSuccess(true);
       triggerConfetti();
-      
+
       // Hide success message after 5 seconds
       setTimeout(() => {
         setShowSuccess(false);
       }, 5000);
-      
-      // Reset form
-      setDonationAmount('100');
-      
-      // In a real application, you would navigate to a confirmation page or show a success modal.
-      console.log('Donation simulated successfully!');
-    }, 1500);
 
+      // Reset form
+      setDonationAmount("100");
+
+      // In a real application, you would navigate to a confirmation page or show a success modal.
+      console.log("Donation simulated successfully!");
+    }, 1500);
   }, [donationAmount, activeTabVisual]);
 
-  const buttonText = useMemo(() => isProcessing ? 'Processing...' : 'Add Donation', [isProcessing]);
+  const buttonText = useMemo(
+    () => (isProcessing ? "Processing..." : "Add Donation"),
+    [isProcessing]
+  );
 
   // Tab Item Component (Styling adjusted to match the image's boxy, unrounded look)
-  const TabItem: React.FC<{ tab: PaymentTab; label: string }> = ({ tab, label }) => {
+  const TabItem: React.FC<{ tab: PaymentTab; label: string }> = ({
+    tab,
+    label,
+  }) => {
     const isActive = activeTabVisual === tab;
     return (
       <button
         type="button"
         onClick={() => setActiveTabVisual(tab)}
         className={`px-4 py-2 text-sm text-gray-900 border-t border-l border-r border-gray-300 transition-colors duration-150 ease-in-out
-          ${isActive
-            ? 'bg-white border-b-white z-10 -mb-px' // Active tab overlaps the bottom border
-            : 'bg-gray-100 border-b border-gray-300 hover:bg-gray-200' // Inactive tab has a full border
+          ${
+            isActive
+              ? "bg-white border-b-white z-10 -mb-px" // Active tab overlaps the bottom border
+              : "bg-gray-100 border-b border-gray-300 hover:bg-gray-200" // Inactive tab has a full border
           }
-          ${tab === 'EFT' ? 'ml-0' : '-ml-px' }`} // Negative margin to visually merge borders
+          ${tab === "EFT" ? "ml-0" : "-ml-px"}`} // Negative margin to visually merge borders
       >
         {label}
       </button>
@@ -169,25 +191,32 @@ const Donate: React.FC = () => {
   return (
     // Minimal background color to match the subtle off-white of the image
     <div className="min-h-screen bg-white flex flex-col items-center p-4 sm:p-8 font-sans">
+      {/* Hidden audio element for sound effect */}
+      <audio ref={audioRef}>
+        <source src="/sounds/donation-success.mp3" type="audio/mpeg" />
+        <source src="/sounds/donation-success.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+
       <div className="w-full max-w-xl">
-        
         {/* Success Message */}
         {showSuccess && (
           <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-50 animate-bounce">
             Thank you for your donation! 🎉
           </div>
         )}
-        
+
         {/* Header Section */}
         <div className="mb-8 pl-1">
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Donate</h1>
           <p className="text-base text-gray-700">It truly takes a village.</p>
-          <p className="text-base text-gray-700">Our society values donations of all sizes.</p>
+          <p className="text-base text-gray-700">
+            Our society values donations of all sizes.
+          </p>
         </div>
 
         {/* Donation Form Card - Minimalist styling to match the image's box */}
         <div className="bg-white border border-gray-300 overflow-hidden">
-
           {/* Tabs Container */}
           <div className="flex bg-gray-100 border-b border-gray-300">
             {/* The tabs are not full width, they are inline */}
@@ -203,7 +232,10 @@ const Donate: React.FC = () => {
 
             <div className="space-y-4">
               {/* Donation Amount Input - Adjusted to match the image's simple look */}
-              <label htmlFor="donation-amount" className="block text-sm font-medium text-gray-700 sr-only">
+              <label
+                htmlFor="donation-amount"
+                className="block text-sm font-medium text-gray-700 sr-only"
+              >
                 Enter Donation Amount
               </label>
               <div className="flex shadow-sm w-full sm:w-80 border border-gray-300">
@@ -229,9 +261,10 @@ const Donate: React.FC = () => {
                 onClick={handleAddDonation}
                 disabled={isProcessing}
                 className={`inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium shadow-sm transition-all duration-300 ease-in-out mt-4
-                  ${isProcessing
-                    ? 'bg-blue-400 cursor-not-allowed text-gray-200'
-                    : 'bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-0'
+                  ${
+                    isProcessing
+                      ? "bg-blue-400 cursor-not-allowed text-gray-200"
+                      : "bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-0"
                   }`}
               >
                 {buttonText}
@@ -239,7 +272,7 @@ const Donate: React.FC = () => {
 
               {/* Specific Content based on tab (placeholder for complexity) */}
               <div className="pt-2">
-                {activeTabVisual === 'EFT' ? (
+                {activeTabVisual === "EFT" ? (
                   <p className="text-sm text-gray-500">
                     Instructions for PayPal, Cheque, and E-Transfer.
                   </p>
@@ -259,10 +292,10 @@ const Donate: React.FC = () => {
             Charity Registration 79421 9725 RR0001
           </p>
           <p className="text-sm text-gray-700 mt-1">
-            For donations <span className='text-green-600 font-bold'>$20</span> and above, we provide a charitable tax receipt!
+            For donations <span className="text-green-600 font-bold">$20</span>{" "}
+            and above, we provide a charitable tax receipt!
           </p>
         </div>
-
       </div>
     </div>
   );
