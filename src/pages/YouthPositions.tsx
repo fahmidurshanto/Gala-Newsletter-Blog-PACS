@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 // Define the shape of the state for the youth volunteer form
 interface FormState {
@@ -10,9 +11,15 @@ interface FormState {
 
 // Area of Interest options structure
 const AREA_OF_INTEREST_OPTIONS: string[] = [
-  'Care', 'Computers', 'Events / Festivals',
-  'Food / Hospitality', 'Fun / Games', 'Health / Education',
-  'Management / Training', 'Outdoors (gardens, beaches, etc.)', 'Sales / Office',
+  "Care",
+  "Computers",
+  "Events / Festivals",
+  "Food / Hospitality",
+  "Fun / Games",
+  "Health / Education",
+  "Management / Training",
+  "Outdoors (gardens, beaches, etc.)",
+  "Sales / Office",
 ];
 
 const initialInterestState = AREA_OF_INTEREST_OPTIONS.reduce((acc, area) => {
@@ -22,22 +29,23 @@ const initialInterestState = AREA_OF_INTEREST_OPTIONS.reduce((acc, area) => {
 
 const YouthPositions: React.FC = () => {
   const [formData, setFormData] = useState<FormState>({
-    schoolName: '',
-    nameGrade: '',
-    email: '',
+    schoolName: "",
+    nameGrade: "",
+    email: "",
     areasOfInterest: initialInterestState,
   });
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
   const handleInterestChange = (area: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       areasOfInterest: {
         ...prev.areasOfInterest,
@@ -53,7 +61,7 @@ const YouthPositions: React.FC = () => {
       return acc;
     }, {} as Record<string, boolean>);
 
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       areasOfInterest: allSelected,
     }));
@@ -61,14 +69,23 @@ const YouthPositions: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Youth Form Submitted:', formData);
+    console.log("Youth Form Submitted:", formData);
     // Add your search or submission logic here
+  };
+
+  const handleCancel = () => {
+    navigate(-1); // Go back to previous page
   };
 
   // Helper component for the Help icon and text
   const HelpLink: React.FC = () => (
-    <a href="#" className="text-gray-600 text-xs ml-1 relative group"
-       onClick={(e) => { e.preventDefault(); console.log("Help clicked"); }}
+    <a
+      href="#"
+      className="text-gray-600 text-xs ml-1 relative group"
+      onClick={(e) => {
+        e.preventDefault();
+        console.log("Help clicked");
+      }}
     >
       [<span className="font-bold text-xs">?</span>Help]
       <span className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-1 p-2 text-white text-xs bg-gray-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -77,27 +94,35 @@ const YouthPositions: React.FC = () => {
     </a>
   );
 
-
   return (
     // Mimicking the simple, unboxed, white background style of the source image
     <div className="py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h1 className="text-3xl font-bold mb-6 text-[#061839]">Youth Volunteer Search</h1>
+          <h1 className="text-3xl font-bold mb-6 text-[#061839]">
+            Youth Volunteer Search
+          </h1>
           <p className="text-lg mb-8 text-[#061839] opacity-80">
-            Search positions suitable for minimum ages 13 to 29 on this list.<br />
-            If you need help click HELP button for further details about areas of interest.
+            Search positions suitable for minimum ages 13 to 29 on this list.
+            <br />
+            If you need help click HELP button for further details about areas
+            of interest.
           </p>
 
           {/* Area of Interest Checkboxes */}
           <div className="mb-8">
             <div className="flex items-center mb-4">
-                <p className="font-semibold text-lg text-[#061839]">Area of Interest</p>
-                <HelpLink />
+              <p className="font-semibold text-lg text-[#061839]">
+                Area of Interest
+              </p>
+              <HelpLink />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-3">
               {AREA_OF_INTEREST_OPTIONS.map((area) => (
-                <label key={area} className="flex items-center space-x-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                <label
+                  key={area}
+                  className="flex items-center space-x-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                >
                   <input
                     type="checkbox"
                     name="areasOfInterest"
@@ -109,7 +134,11 @@ const YouthPositions: React.FC = () => {
                 </label>
               ))}
             </div>
-            <a href="#" onClick={handleSelectAll} className="text-[#1C75BC] text-sm mt-2 inline-block hover:underline font-medium">
+            <a
+              href="#"
+              onClick={handleSelectAll}
+              className="text-[#1C75BC] text-sm mt-2 inline-block hover:underline font-medium"
+            >
               Select All
             </a>
           </div>
@@ -117,7 +146,10 @@ const YouthPositions: React.FC = () => {
           {/* School Name and Name/Grade */}
           <div className="flex flex-wrap mb-8 gap-6">
             <div className="flex-1 min-w-[200px]">
-              <label htmlFor="schoolName" className="block font-semibold mb-2 text-[#061839] text-lg">
+              <label
+                htmlFor="schoolName"
+                className="block font-semibold mb-2 text-[#061839] text-lg"
+              >
                 School Name (or N/A)
               </label>
               <input
@@ -132,7 +164,10 @@ const YouthPositions: React.FC = () => {
               />
             </div>
             <div className="flex-1 min-w-[200px]">
-              <label htmlFor="nameGrade" className="block font-semibold mb-2 text-[#061839] text-lg">
+              <label
+                htmlFor="nameGrade"
+                className="block font-semibold mb-2 text-[#061839] text-lg"
+              >
                 Name / Grade if appropriate
               </label>
               <input
@@ -150,7 +185,10 @@ const YouthPositions: React.FC = () => {
 
           {/* E-mail Address */}
           <div className="mb-8">
-            <label htmlFor="email" className="block font-semibold mb-2 text-[#061839] text-lg">
+            <label
+              htmlFor="email"
+              className="block font-semibold mb-2 text-[#061839] text-lg"
+            >
               E-mail Address
               <HelpLink />
             </label>
@@ -167,11 +205,18 @@ const YouthPositions: React.FC = () => {
           </div>
 
           {/* Search Button */}
-          <div className="mt-8">
+          <div className="mt-8 flex gap-4">
+            <button
+              type="button"
+              onClick={handleCancel}
+              className="px-8 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors flex items-center justify-center gap-2"
+            >
+              Cancel
+            </button>
             <button
               type="submit"
               onClick={handleSubmit}
-              className="px-8 py-3 bg-[#1C75BC] text-white font-semibold rounded-xl hover:bg-[#165a9a] transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="px-8 py-3 bg-[#1C75BC] text-white font-semibold rounded-lg hover:bg-[#165a9a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C75BC] shadow-sm transition-all flex items-center justify-center gap-2"
             >
               Search Opportunities
             </button>
