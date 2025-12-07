@@ -1,89 +1,91 @@
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import confetti from 'canvas-confetti';
+import "react-toastify/dist/ReactToastify.css";
 
 const SignupPage: React.FC = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const triggerConfetti = () => {
-    const count = 300; // Less intense than donation confetti
-    const defaults = {
-      origin: { y: 0.7 },
-      zIndex: 10000,
-    };
+  const triggerParticleBurst = () => {
+    const particleCount = 100;
+    const colors = ["#1C75BC", "#061839", "#D7562B", "#ffffff"];
 
-    const fire = (particleRatio: number, opts: confetti.Options) => {
-      confetti({
-        ...defaults,
-        ...opts,
-        particleCount: Math.floor(count * particleRatio)
-      });
-    };
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement("div");
+      particle.style.position = "fixed";
+      particle.style.width = `${Math.random() * 10 + 5}px`;
+      particle.style.height = particle.style.width;
+      particle.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+      particle.style.borderRadius = "50%";
+      particle.style.opacity = "0";
+      particle.style.pointerEvents = "none";
+      particle.style.zIndex = "10000";
 
-    // Initial full-screen burst
-    confetti({
-      particleCount: 100,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 },
-      gravity: 0.1,
-      decay: 0.9,
-      scalar: 1.2,
-    });
-    
-    confetti({
-      particleCount: 100,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 },
-      gravity: 0.1,
-      decay: 0.9,
-      scalar: 1.2,
-    });
+      // Position particles at the center of the screen
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
 
-    // More subtle confetti bursts
-    fire(0.3, {
-      spread: 50,
-      startVelocity: 50,
-      decay: 0.85,
-      scalar: 1.0,
-      gravity: 0.05,
-    });
+      particle.style.left = `${centerX}px`;
+      particle.style.top = `${centerY}px`;
 
-    fire(0.2, {
-      spread: 90,
-      startVelocity: 30,
-      scalar: 0.8,
-      gravity: 0.1,
-    });
+      document.body.appendChild(particle);
+
+      // Animate particle
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 200 + 100;
+      const duration = Math.random() * 1000 + 1000;
+
+      const animation = particle.animate(
+        [
+          {
+            transform: `translate(0, 0) scale(1)`,
+            opacity: 1,
+          },
+          {
+            transform: `translate(${Math.cos(angle) * distance}px, ${
+              Math.sin(angle) * distance
+            }px) scale(0)`,
+            opacity: 0,
+          },
+        ],
+        {
+          duration: duration,
+          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        }
+      );
+
+      // Remove particle after animation completes
+      animation.onfinish = () => {
+        particle.remove();
+      };
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simple email validation
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      toast.error('Please enter a valid email address');
+      toast.error("Please enter a valid email address");
       return;
     }
 
     try {
       setLoading(true);
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Trigger confetti effect
-      triggerConfetti();
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // Trigger particle burst effect
+      triggerParticleBurst();
+
       // Show success message
-      toast.success('Thank you for signing up! We will contact you soon.');
-      
+      toast.success("Thank you for signing up! We will contact you soon.");
+
       // Reset form
-      setEmail('');
+      setEmail("");
     } catch {
-      toast.error('Failed to sign up. Please try again.');
+      toast.error("Failed to sign up. Please try again.");
     }
 
     setLoading(false);
@@ -94,8 +96,18 @@ const SignupPage: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="mx-auto h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-            <svg className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            <svg
+              className="h-12 w-12 text-blue-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+              />
             </svg>
           </div>
           <h2 className="mt-2 text-3xl font-extrabold text-gray-900">
@@ -105,17 +117,30 @@ const SignupPage: React.FC = () => {
             Sign up to receive updates about our events and activities
           </p>
         </div>
-        
+
         <div className="bg-white py-8 px-4 shadow-xl rounded-2xl sm:px-10 border border-gray-100">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    className="h-5 w-5 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                 </div>
                 <input
@@ -139,18 +164,44 @@ const SignupPage: React.FC = () => {
                 className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:scale-[1.02]"
               >
                 {loading ? (
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
                   </svg>
                 ) : null}
-                {loading ? 'Signing up...' : 'Sign up'}
+                {loading ? "Signing up..." : "Sign up"}
               </button>
             </div>
           </form>
         </div>
       </div>
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
