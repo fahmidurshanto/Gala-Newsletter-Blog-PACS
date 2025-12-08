@@ -1,5 +1,8 @@
 ﻿# Gala Newsletter & Blog - PACS Website
 
+## Live
+https://projectdemosaj.vercel.app
+
 ## Overview
 
 This website serves as a platform for the Performing Arts Centre Society (PACS) to share community news, event highlights, and volunteer opportunities. Built with modern web technologies, it offers an engaging user experience with responsive design and interactive elements.
